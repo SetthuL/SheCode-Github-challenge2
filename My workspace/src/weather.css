@@ -1,0 +1,28 @@
+body {
+  background: linear-gradient(
+    109.5deg,
+    rgb(13, 11, 136) 9.4%,
+    rgb(86, 255, 248) 78.4%
+  );
+}
+header {
+  text-align: center;
+  padding: 10px;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+.iconed-temp {
+  display: flex;
+  justify-content: left;
+  font-weight: bolder;
+  font-size: larger;
+}
+main {
+  font-family: "Patrick Hand", cursive;
+}
+footer {
+  font-weight: bold;
+  font-style: italic;
+}

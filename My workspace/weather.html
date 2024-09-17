@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <title>My weather application</title>
+  </head>
+  <body>
+    <header>
+      <form>
+        <input type="search" placeholder="Enter a city.." required />
+        <input type="submit" value="Search" />
+      </form>
+    </header>
+    <main>
+      <div class="current-weather">
+        <div>
+          <h1>Johannesburg</h1>
+          <p>
+            Saturday 15:32, moderate rain <br />
+            Humidity:<strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+          </p>
+        </div>
+        <div class="iconed-temp">☀️ 14°C</div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        This project was coded by
+        <a href="#" target="_blank">SetthuL</a> and is
+        <a href="#" target="_blank"> on GitHub</a>
+      </p>
+    </footer>
+    <script>
+      let now = new Date();
+      let currentDetails = document.querySelector(".current-details"); // Fixed variable name
+
+      let hours = now.getHours();
+      let date = now.getDate();
+      let minutes = now.getMinutes();
+
+      minutes = minutes < 10 ? `0${minutes}` : minutes;
+
+      currentDetails.innerHTML = `Sat ${hours}:${minutes}`;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        let searchForm = document.querySelector("form");
+        let cityNameElement = document.querySelector(".current-city");
+
+        searchForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const cityName = document.querySelector(".search-input").value;
+
+          cityNameElement.innerText = cityName;
+
+          document.querySelector(".search-input").value = "";
+        });
+      });
+    </script>
+  </body>
+</html>
